@@ -95,7 +95,7 @@ What factors actually drive a restaurant's rating — cuisine type, price range,
 
 **Work Done:** A Pearson correlation matrix was calculated across `Aggregate rating`, `Votes`, `Price range`, and `Average Cost for two`, and visualized as a heatmap.
 
-**Result:** *(add your own finding here — based on the heatmap values, state which variable correlates most strongly with rating)*
+**Result:** Both Votes (0.41) and Price range (0.40) show a similar, moderate positive correlation with Aggregate rating — meaning neither factor dominates the other in explaining rating differences. Votes and Price range themselves show a weaker correlation (0.27) with each other, suggesting they capture somewhat independent aspects of a restaurant's profile. Overall, no single numeric variable strongly determines rating on its own — this reinforces the earlier finding that rating is shaped by a combination of factors rather than any one dominant driver.
 
 **Visual:**
 <img src="images/correlation_heatmap.png" width="600">
