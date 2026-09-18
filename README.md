@@ -85,8 +85,3 @@ pip install pandas seaborn matplotlib
 jupyter notebook notebooks/zomato_eda.ipynb
 ```
 
-## 📌 Future Work
-
-- Correlation heatmap across all numeric variables (rating, votes, price, cost)
-- Interactive dashboard (Power BI or Plotly)
-- Predictive modeling (e.g., regression) to quantify each factor's contribution to rating
