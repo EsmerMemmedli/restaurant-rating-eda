@@ -6,20 +6,12 @@ What factors actually drive a restaurant's rating — cuisine type, price range,
 
 **Project Type:** Exploratory Data Analysis (EDA)
 
-## 🛠️ Tools & Technologies
+## 🛠️ Tools
 
 - Python
 - Pandas
 - Seaborn
 - Matplotlib
-
-## 🎯 Objective
-
-- Identify which cuisine types achieve the highest average ratings
-- Determine whether price range is associated with higher ratings
-- Explore the relationship between review count (popularity) and rating
-- Compare restaurant performance across cities
-- Translate findings into actionable recommendations for restaurant owners
 
 ## 📁 Dataset
 
@@ -30,7 +22,8 @@ What factors actually drive a restaurant's rating — cuisine type, price range,
 | Restaurant Name | Name of the restaurant |
 | City | City where the restaurant is located |
 | Cuisines | Cuisine type(s) served (comma-separated) |
-| Price range | Price category (1 = Cheap, 4 = Expensive) |
+| Price range | Price category (1 = cheap, 4 = expensive) |
+| Average Cost for two | Average cost for two people |
 | Aggregate rating | Average customer rating (0–5) |
 | Votes | Number of reviews/votes received |
 
@@ -38,43 +31,79 @@ What factors actually drive a restaurant's rating — cuisine type, price range,
 
 - Removed restaurants with `Aggregate rating = 0` (not yet rated)
 - Split the `Cuisines` column (comma-separated) and exploded it into individual rows for cuisine-level analysis
-- Filtered out cuisines and cities with very low restaurant counts to avoid misleading averages based on tiny samples
+- Filtered out cuisines and cities with very low restaurant counts to avoid misleading averages based on tiny sample sizes
 
-## 📊 Analysis & Key Findings
+---
 
-### 1. Average Rating by Cuisine Type
-Restricting to cuisines with 30+ restaurants, **Indian (4.16)**, **Bar Food (4.15)**, and **Sandwich (4.07)** rank highest. Widely available cuisines like **Chinese (3.28, 2184 restaurants)**, **North Indian (3.30, 3017 restaurants)**, and **Fast Food (3.26, 1563 restaurants)** rank lower — likely due to market saturation and intense competition.
+## 📊 Analysis 1 — Average Rating by Cuisine Type
 
-**Takeaway:** Niche cuisines with less competition tend to sustain higher customer satisfaction than saturated, high-volume categories.
+**Business Question:** Which cuisine types are rated highest by customers?
 
-### 2. Price Range vs Rating
-Median ratings rise as price range increases from 1 to 3, then level off at 4. However, price range 3 shows the most low-rating outliers, meaning higher prices do not guarantee consistent quality.
+**Work Done:** The `Cuisines` column was split and exploded so each restaurant's cuisines could be evaluated individually. Average rating was calculated for cuisines with at least 30 restaurants, and the top 15 were plotted as a bar chart.
 
-**Takeaway:** Raising prices alone does not guarantee a better rating — mid-to-upper price segments carry a higher risk of underdelivering on customer expectations.
+**Result:** **Indian (4.16)**, **Bar Food (4.15)**, and **Sandwich (4.07)** rank highest. Widely available cuisines — **Chinese (3.28, 2184 restaurants)**, **North Indian (3.30, 3017 restaurants)**, and **Fast Food (3.26, 1563 restaurants)** — rank lower. Niche, less-competitive cuisines show more consistent customer satisfaction than saturated, high-volume categories.
 
-### 3. Review Count vs Rating
-Restaurants with low ratings tend to receive few reviews, while high-rated restaurants show a wide spread — from a handful of reviews to over 10,000.
+**Visual:**
+`images/cuisine_bar_chart.png`
 
-**Takeaway:** High ratings appear to be a prerequisite for popularity, but popularity alone does not guarantee a high rating.
+---
 
-### 4. City-Level Performance
-**London (4.54)**, **Orlando (4.48)**, and **Rest of Hawaii (4.41)** top the list among cities with 20+ restaurants. On the other end, **New Delhi (3.30, 4048 restaurants)**, **Gurgaon (3.33, 890 restaurants)**, and **Noida (3.16, 696 restaurants)** — the largest, most saturated markets — show the lowest average ratings.
+## 📊 Analysis 2 — Price Range vs Rating Comparison
 
-**Takeaway:** Restaurant density and average rating appear inversely related — larger, more competitive markets tend to show lower average customer satisfaction.
+**Business Question:** Do more expensive restaurants actually get higher ratings?
+
+**Work Done:** Using `df_clean`, the distribution of Aggregate rating across Price range categories (1–4) was visualized with a box plot.
+
+**Result:** Median rating rises from Price range 1 to 3, then levels off at 4. However, Price range 3 shows the most low-rating outliers — meaning a higher price does not guarantee consistent quality. Raising prices alone does not guarantee a better rating.
+
+**Visual:**
+`images/price_boxplot.png`
+
+---
+
+## 📊 Analysis 3 — Review Count vs Rating
+
+**Business Question:** Does popularity (a high number of reviews) mean a higher rating?
+
+**Work Done:** The relationship between Votes (review count) and Aggregate rating was plotted as a scatter plot, with the x-axis on a log scale due to the wide range of Votes values.
+
+**Result:** Low-rated restaurants generally receive few reviews, while high-rated restaurants are spread across a wide range — from just a handful of reviews to over 10,000. A high rating appears to be a prerequisite for popularity, but popularity itself doesn't guarantee a high rating.
+
+**Visual:**
+`images/review_scatter.png`
+
+---
+
+## 📊 Analysis 4 — City-Level Performance Breakdown
+
+**Business Question:** Which cities represent the healthiest markets for a restaurant business?
+
+**Work Done:** Restaurants were grouped by `City`, and average rating was calculated for cities with at least 20 restaurants. The top 15 and bottom 15 cities were each plotted as bar charts.
+
+**Result:** **London (4.54)**, **Orlando (4.48)**, and **Rest of Hawaii (4.41)** top the list. The largest, most saturated markets — **New Delhi (3.30, 4048 restaurants)**, **Gurgaon (3.33, 890 restaurants)**, and **Noida (3.16, 696 restaurants)** — show the lowest average ratings. Restaurant density and average rating appear inversely related.
+
+**Visual:**
+`images/city_top15.png`
+`images/city_bottom15.png`
+
+---
+
+## 📊 Analysis 5 — Correlation Heatmap
+
+**Business Question:** Which numeric variable has the strongest relationship with rating — Votes, Price range, or Cost?
+
+**Work Done:** A Pearson correlation matrix was calculated across `Aggregate rating`, `Votes`, `Price range`, and `Average Cost for two`, and visualized as a heatmap.
+
+**Result:** *(add your own finding here — based on the heatmap values, state which variable correlates most strongly with rating)*
+
+**Visual:**
+`images/correlation_heatmap.png`
+
+---
 
 ## 💡 Overall Business Conclusion
 
-No single factor — cuisine, price, or location — fully determines a restaurant's rating on its own. Instead, **market saturation and competition level** emerge as a recurring theme across all four analyses: niche cuisines, less crowded price segments, and smaller markets consistently show higher average ratings than their saturated counterparts. For restaurant owners, this suggests that **differentiation and quality consistency matter more than simply competing on price or entering high-density markets**.
-
-## 🖼️ Visualizations
-
-*(Add screenshots here)*
-
-- `images/cuisine_bar_chart.png`
-- `images/price_boxplot.png`
-- `images/review_scatter.png`
-- `images/city_top15.png`
-- `images/city_bottom15.png`
+No single factor — cuisine, price, or location — fully determines a restaurant's rating on its own. Instead, a recurring theme across all analyses is **market saturation and competition level**: niche cuisines, less crowded price segments, and smaller markets consistently show higher average ratings than their saturated counterparts. For restaurant owners, this suggests that **differentiation and consistent quality matter more than simply competing on price or entering high-density markets**.
 
 ## 🚀 How to Run
 
@@ -84,4 +113,3 @@ cd zomato-restaurant-rating-eda
 pip install pandas seaborn matplotlib
 jupyter notebook notebooks/zomato_eda.ipynb
 ```
-
