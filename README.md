@@ -1,4 +1,4 @@
-# 🍽️ Restaurant Rating Analysis — EDA Project
+# 🍽️ Restaurant Rating Analysis
 
 ## 📌 Overview
 
