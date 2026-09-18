@@ -83,6 +83,7 @@ What factors actually drive a restaurant's rating — cuisine type, price range,
 **Result:** **London (4.54)**, **Orlando (4.48)**, and **Rest of Hawaii (4.41)** top the list. The largest, most saturated markets — **New Delhi (3.30, 4048 restaurants)**, **Gurgaon (3.33, 890 restaurants)**, and **Noida (3.16, 696 restaurants)** — show the lowest average ratings. Restaurant density and average rating appear inversely related.
 
 **Visual:**
+
 <img src="images/city_top15.png" width="600">
 <img src="images/city_bottom15.png" width="600">
 
