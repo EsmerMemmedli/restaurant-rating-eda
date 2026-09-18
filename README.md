@@ -2,36 +2,46 @@
 
 ## 📌 Overview
 
-What factors actually drive a restaurant's rating — cuisine type, price range, or location? This project analyzes the [Zomato Restaurants Dataset](https://www.kaggle.com/datasets/shrutimehta/zomato-restaurants-data) to surface patterns a restaurant owner could act on.
-
-**Project Type:** Exploratory Data Analysis (EDA)
+This project performs Exploratory Data Analysis (EDA) on Zomato restaurant data using Python libraries like Pandas, Matplotlib, and Seaborn. The goal of this project is to analyze what actually drives a restaurant's rating — cuisine type, price range, or location — and surface patterns a restaurant owner could act on.
 
 ## 🛠️ Tools
 
 - Python
 - Pandas
-- Seaborn
+- NumPy
 - Matplotlib
+- Seaborn
+- Jupyter Notebook
+
+## 📌 Project Objectives
+
+- Identify which cuisine types achieve the highest average ratings 
+- Determine whether price range is associated with higher ratings 
+- Explore the relationship between review count (popularity) and rating 
+- Compare restaurant performance across cities 
+- Visualize insights using bar charts, box plots, scatter plots, and a correlation heatmap
 
 ## 📁 Dataset
 
 **Source:** [Zomato Restaurants Data — Kaggle](https://www.kaggle.com/datasets/shrutimehta/zomato-restaurants-data)
 
-| Column | Description |
-|---|---|
-| Restaurant Name | Name of the restaurant |
-| City | City where the restaurant is located |
-| Cuisines | Cuisine type(s) served (comma-separated) |
-| Price range | Price category (1 = cheap, 4 = expensive) |
-| Average Cost for two | Average cost for two people |
-| Aggregate rating | Average customer rating (0–5) |
-| Votes | Number of reviews/votes received |
+## 📊 Analysis Performed
 
-## 🧹 Data Cleaning
+✅ Data Cleaning
 
-- Removed restaurants with `Aggregate rating = 0` (not yet rated)
-- Split the `Cuisines` column (comma-separated) and exploded it into individual rows for cuisine-level analysis
-- Filtered out cuisines and cities with very low restaurant counts to avoid misleading averages based on tiny sample sizes
+Removed restaurants with a rating of 0 (not yet rated) 
+Split and exploded the Cuisines column so each cuisine could be analyzed individually 
+Filtered out cuisines and cities with very low restaurant counts to avoid misleading averages
+
+✅ Exploratory Data Analysis
+
+Major business questions answered in this project:
+
+Which cuisine types are rated highest by customers? 
+Do more expensive restaurants actually get higher ratings?
+Does popularity (a high number of reviews) mean a higher rating? 
+Which cities represent the healthiest markets for a restaurant business? 
+Which numeric variable has the strongest relationship with rating — votes, price range, or cost?
 
 ---
 
@@ -101,6 +111,14 @@ What factors actually drive a restaurant's rating — cuisine type, price range,
 <img src="images/correlation_heatmap.png" width="600">
 
 ---
+
+## 🔍 Key Insights
+
+- Indian, Bar Food, and Sandwich cuisines have the highest average ratings, while widely available cuisines like Chinese, North Indian, and Fast Food rank lower due to market saturation.
+- Median rating rises with price range up to range 3, but higher prices don't guarantee consistent quality — range 3 shows the most low-rating outliers. 
+- Low-rated restaurants generally receive few reviews, while high-rated restaurants span a wide range of review counts — popularity doesn't guarantee a high rating. 
+- London, Orlando, and Rest of Hawaii top the list of cities by average rating, while the largest, most saturated markets (New Delhi, Gurgaon, Noida) show the lowest average ratings. 
+- Votes (0.41) and Price range (0.40) show a similar, moderate correlation with rating — no single numeric factor dominates.
 
 ## 💡 Overall Business Conclusion
 
