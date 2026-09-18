@@ -29,19 +29,19 @@ This project performs Exploratory Data Analysis (EDA) on Zomato restaurant data 
 
 ✅ Data Cleaning
 
-Removed restaurants with a rating of 0 (not yet rated) 
-Split and exploded the Cuisines column so each cuisine could be analyzed individually 
-Filtered out cuisines and cities with very low restaurant counts to avoid misleading averages
+- Removed restaurants with a rating of 0 (not yet rated) 
+- Split and exploded the Cuisines column so each cuisine could be analyzed individually 
+- Filtered out cuisines and cities with very low restaurant counts to avoid misleading averages
 
 ✅ Exploratory Data Analysis
 
-Major business questions answered in this project:
+*Major business questions answered in this project:*
 
-Which cuisine types are rated highest by customers? 
-Do more expensive restaurants actually get higher ratings?
-Does popularity (a high number of reviews) mean a higher rating? 
-Which cities represent the healthiest markets for a restaurant business? 
-Which numeric variable has the strongest relationship with rating — votes, price range, or cost?
+- Which cuisine types are rated highest by customers? 
+- Do more expensive restaurants actually get higher ratings?
+- Does popularity (a high number of reviews) mean a higher rating? 
+- Which cities represent the healthiest markets for a restaurant business? 
+- Which numeric variable has the strongest relationship with rating — votes, price range, or cost?
 
 ---
 
