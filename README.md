@@ -54,7 +54,7 @@ This project performs Exploratory Data Analysis (EDA) on Zomato restaurant data 
 **Result:** **Indian (4.16)**, **Bar Food (4.15)**, and **Sandwich (4.07)** rank highest. Widely available cuisines — **Chinese (3.28, 2184 restaurants)**, **North Indian (3.30, 3017 restaurants)**, and **Fast Food (3.26, 1563 restaurants)** — rank lower. Niche, less-competitive cuisines show more consistent customer satisfaction than saturated, high-volume categories.
 
 **Visual:**
-<img src="images/cuisine_bar_chart.png" width="600">
+<img src="images/cuisine_bar_chart.png" width="500">
 
 ---
 
@@ -119,6 +119,26 @@ This project performs Exploratory Data Analysis (EDA) on Zomato restaurant data 
 - Low-rated restaurants generally receive few reviews, while high-rated restaurants span a wide range of review counts — popularity doesn't guarantee a high rating. 
 - London, Orlando, and Rest of Hawaii top the list of cities by average rating, while the largest, most saturated markets (New Delhi, Gurgaon, Noida) show the lowest average ratings. 
 - Votes (0.41) and Price range (0.40) show a similar, moderate correlation with rating — no single numeric factor dominates.
+
+## 🚀 How to Run the Project
+
+Clone the repository git clone https://github.com/EsmerMemmedli/restaurant-rating-eda.git
+
+Install required libraries pip install pandas seaborn matplotlib
+
+Open the Jupyter Notebook jupyter notebook
+
+Run all cells in the notebook.
+
+## 📚 Learning Outcomes
+
+Through this project, I learned:
+
+- Data cleaning and preprocessing
+- Exploratory Data Analysis (EDA)
+- Data visualization techniques
+- Extracting business insights from datasets
+- Working with real-world datasets using Python
 
 ## 💡 Overall Business Conclusion
 
